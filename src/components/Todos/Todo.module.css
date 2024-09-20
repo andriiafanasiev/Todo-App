@@ -1,0 +1,10 @@
+.todo {
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+    padding: 5px 20px;
+    border: 1px solid gray;
+    font-size: 24px;
+    margin: 0 auto;
+    margin-top: 10px;
+}

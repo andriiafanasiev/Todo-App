@@ -1,0 +1,22 @@
+.todoForm__container {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    font-size: 34px;
+    margin-top: 20px;
+}
+
+.todoInput {
+    padding: 3px 10px;
+    font-size: 24px;
+    background-color: #CCC2FE;
+    color: #828282;
+    border-radius: 20px;
+
+}
+
+.todoForm__container button {
+    background: #7e64ff;
+    color: white;
+    padding: 5px 20px;
+}
