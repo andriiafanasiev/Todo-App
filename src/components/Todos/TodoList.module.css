@@ -1,0 +1,6 @@
+.todo__todolist {
+    display: flex;
+    overflow: scroll;
+    flex-direction: column;
+    max-height: 420px;
+}
