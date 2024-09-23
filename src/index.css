@@ -8,6 +8,9 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   overflow: hidden;
+  color: white;
+  background: linear-gradient(214deg, #2a2a2e 18.2%, #1f1338 45.2%, #000 84.58%);
+
 }
 
 * {

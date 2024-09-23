@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
 import styles from './TodoForm.module.css';
-function TodoForm({ setTodos, todos }) {
+
+function TodoForm({ addTodo }) {
   let [todoText, setTodoText] = useState('');
 
+  function onSubmitHandler(e) {
+    e.preventDefault();
+    addTodo(todoText);
+    setTodoText('');
+  }
+
   return (
-    <form className={styles.todoForm__container}>
+    <form onSubmit={onSubmitHandler} className={styles.todoForm__container}>
       <input
+        placeholder="Enter new todo"
         className={styles.todoInput}
         value={todoText}
         onChange={(e) => {
@@ -13,17 +21,7 @@ function TodoForm({ setTodos, todos }) {
         }}
         type="text"
       />
-      <button
-        onClick={(e) => {
-          e.preventDefault();
-          if (todoText !== '' && todoText !== todos[todos.length - 1]) {
-            setTodos([...todos, todoText]);
-          }
-        }}
-        type="submit"
-      >
-        Submit
-      </button>
+      <button type="submit">Submit</button>
     </form>
   );
 }

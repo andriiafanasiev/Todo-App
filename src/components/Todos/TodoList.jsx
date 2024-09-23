@@ -6,8 +6,8 @@ function TodoList({ todos }) {
   return (
     <div className={styles.todo__todolist}>
       {todos
-        ? todos.map((todoText) => {
-            return <Todo todoText={todoText}></Todo>;
+        ? todos.map((todoText, index) => {
+            return <Todo key={index} todoText={todoText}></Todo>;
           })
         : 'Todo list is empty'}
     </div>
