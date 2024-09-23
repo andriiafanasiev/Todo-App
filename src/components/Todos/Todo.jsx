@@ -1,9 +1,9 @@
 import styles from './Todo.module.css';
-function Todo({ todoText }) {
+function Todo({ todoText, index, deleteTodo }) {
   return (
     <div
-      onDoubleClick={(e) => {
-        e.target.style.display = 'none';
+      onDoubleClick={() => {
+        deleteTodo(index);
       }}
       className={styles.todo}
     >
