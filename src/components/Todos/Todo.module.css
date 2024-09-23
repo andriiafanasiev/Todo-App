@@ -5,10 +5,20 @@
     padding: 5px 20px;
     border: 1px solid gray;
     font-size: 24px;
+    justify-content: space-between;
     margin: 0 auto;
     margin-top: 10px;
 }
 
 .todo__info {
+
     display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.todo__icon {
+    max-width: 30px;
+    max-height: 30px;
 }

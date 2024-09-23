@@ -16,7 +16,9 @@ function TodoForm({ setTodos, todos }) {
       <button
         onClick={(e) => {
           e.preventDefault();
-          setTodos([...todos, todoText]);
+          if (todoText !== '') {
+            setTodos([...todos, todoText]);
+          }
         }}
         type="submit"
       >
