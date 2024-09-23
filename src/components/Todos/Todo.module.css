@@ -15,10 +15,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: 800;
     gap: 10px;
 }
 
 .todo__icon {
-    max-width: 30px;
-    max-height: 30px;
+    font-size: 2rem;
 }
