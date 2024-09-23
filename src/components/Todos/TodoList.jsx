@@ -5,11 +5,10 @@ import styles from './TodoList.module.css';
 function TodoList({ todos }) {
   return (
     <div className={styles.todo__todolist}>
-      {todos
-        ? todos.map((todoText, index) => {
-            return <Todo key={index} todoText={todoText}></Todo>;
-          })
-        : 'Todo list is empty'}
+      {todos.length === 0 && <h2>Todo list is empty</h2>}
+      {todos.map((todoText, index) => {
+        return <Todo key={index} todoText={todoText}></Todo>;
+      })}
     </div>
   );
 }
