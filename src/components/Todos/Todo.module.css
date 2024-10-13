@@ -21,4 +21,22 @@
 
 .todo__icon {
     font-size: 2rem;
+    color: white;
+}
+
+.todo__controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    flex-direction: row;
+}
+
+.todo__controls button {
+    background-color: transparent;
+}
+
+.todo.todo-completed .todo__info .todo__text {
+    text-decoration: line-through;
+
 }

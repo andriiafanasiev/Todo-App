@@ -1,16 +1,19 @@
-import { useState } from 'react';
-import './App.css';
-import TodoForm from './components/Todos/TodoForm';
+import React, { useState } from 'react';
+import capitalizeFirstLetter from './utils';
 import TodoList from './components/Todos/TodoList';
-import capitalizeFirstLetter from './utils.js';
+import TodoForm from './components/Todos/TodoForm';
+import './App.css';
 
 function App() {
   const [todos, setTodos] = useState([]);
 
   const addTodoHandler = (todoText) => {
     todoText = capitalizeFirstLetter(todoText);
-    if (todoText !== '' && todoText !== todos[todos.length - 1]) {
-      setTodos([...todos, todoText]);
+    if (
+      todoText !== '' &&
+      (!todos.length || todoText !== todos[todos.length - 1].text)
+    ) {
+      setTodos([...todos, { text: todoText, completed: false }]);
     }
   };
 
@@ -18,11 +21,23 @@ function App() {
     setTodos(todos.filter((_, id) => id !== index));
   };
 
+  const toggleTodoAsCompleted = (index) => {
+    setTodos((prevTodos) =>
+      prevTodos.map((todo, i) =>
+        i === index ? { ...todo, completed: !todo.completed } : todo
+      )
+    );
+  };
+
   return (
     <div className="App">
       <h1 style={{ marginTop: '10%' }}>Todo App</h1>
-      <TodoForm todos={todos} addTodo={addTodoHandler} />
-      <TodoList todos={todos} deleteTodo={deleteTodoHandler} />
+      <TodoForm addTodo={addTodoHandler} />
+      <TodoList
+        todos={todos}
+        deleteTodo={deleteTodoHandler}
+        toggleTodoAsCompleted={toggleTodoAsCompleted}
+      />
     </div>
   );
 }

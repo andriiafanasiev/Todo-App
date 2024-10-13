@@ -2,18 +2,19 @@ import React from 'react';
 import Todo from './Todo';
 import styles from './TodoList.module.css';
 
-function TodoList({ todos, deleteTodo }) {
+function TodoList({ todos, deleteTodo, toggleTodoAsCompleted }) {
   return (
     <div className={styles.todo__todolist}>
       {todos.length === 0 && <h2>Todo list is empty</h2>}
-      {todos.map((todoText, index) => {
+      {todos.map((todo, index) => {
         return (
           <Todo
             deleteTodo={deleteTodo}
+            toggleTodoAsCompleted={toggleTodoAsCompleted}
             key={index}
             index={index}
-            todoText={todoText}
-          ></Todo>
+            todo={todo}
+          />
         );
       })}
     </div>
