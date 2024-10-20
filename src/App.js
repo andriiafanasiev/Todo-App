@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import capitalizeFirstLetter from './utils';
 import TodoList from './components/Todos/TodoList';
 import TodoForm from './components/Todos/TodoForm';
@@ -9,22 +10,29 @@ function App() {
 
   const addTodoHandler = (todoText) => {
     todoText = capitalizeFirstLetter(todoText);
+    const newTodo = {
+      text: todoText,
+      isCompleted: false,
+      id: uuidv4(),
+    };
     if (
       todoText !== '' &&
       (!todos.length || todoText !== todos[todos.length - 1].text)
     ) {
-      setTodos([...todos, { text: todoText, completed: false }]);
+      setTodos([...todos, newTodo]);
     }
   };
 
-  const deleteTodoHandler = (index) => {
-    setTodos(todos.filter((_, id) => id !== index));
+  const deleteTodoHandler = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
 
-  const toggleTodoAsCompleted = (index) => {
+  const toggleTodoHandler = (id) => {
     setTodos((prevTodos) =>
-      prevTodos.map((todo, i) =>
-        i === index ? { ...todo, completed: !todo.completed } : todo
+      prevTodos.map((todo) =>
+        todo.id === id
+          ? { ...todo, isCompleted: !todo.isCompleted }
+          : { ...todo }
       )
     );
   };
@@ -36,7 +44,7 @@ function App() {
       <TodoList
         todos={todos}
         deleteTodo={deleteTodoHandler}
-        toggleTodoAsCompleted={toggleTodoAsCompleted}
+        toggleTodo={toggleTodoHandler}
       />
     </div>
   );

@@ -4,25 +4,21 @@ import { MdOutlineDelete } from 'react-icons/md';
 import { FaCheck } from 'react-icons/fa';
 import styles from './Todo.module.css';
 
-function Todo({ todo, index, deleteTodo, toggleTodoAsCompleted }) {
+function Todo({ todo, deleteTodo, toggleTodo }) {
   return (
     <div
-      className={
-        todo.completed
-          ? `${styles.todo} ${styles['todo-completed']}`
-          : styles.todo
-      }
+      className={`${styles.todo} ${todo.isCompleted && styles.competedTodo}`}
     >
       <div className={styles.todo__info}>
         <RiTodoFill className={styles.todo__icon} />
         <p className={styles.todo__text}>{todo.text}</p>{' '}
       </div>
       <div className={styles.todo__controls}>
-        <button onClick={() => deleteTodo(index)}>
-          <MdOutlineDelete className={styles.todo__icon} />
+        <button onClick={() => deleteTodo(todo.id)}>
+          <MdOutlineDelete className={styles.todo__deleteIcon} />
         </button>
-        <button onClick={() => toggleTodoAsCompleted(index)}>
-          <FaCheck className={styles.todo__icon} />
+        <button onClick={() => toggleTodo(todo.id)}>
+          <FaCheck className={styles.todo__checkIcon} />
         </button>
       </div>
     </div>
