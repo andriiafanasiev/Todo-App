@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import capitalizeFirstLetter from './utils';
 import TodoList from './components/Todos/TodoList';
 import TodoForm from './components/Todos/TodoForm';
+import TodosActions from './components/Todos/TodosActions';
 import './App.css';
 
 function App() {
@@ -37,15 +38,38 @@ function App() {
     );
   };
 
+  const resetTodosHandler = () => {
+    setTodos([]);
+  };
+
+  const clearCompletedTodosHandler = () => {
+    setTodos(todos.filter((todo) => !todo.isCompleted));
+  };
+
   return (
     <div className="App">
       <h1 style={{ marginTop: '10%' }}>Todo App</h1>
       <TodoForm addTodo={addTodoHandler} />
+
+      {todos.length !== 0 && (
+        <TodosActions
+          resetTodos={resetTodosHandler}
+          clearCompletedTodos={clearCompletedTodosHandler}
+        />
+      )}
+
       <TodoList
         todos={todos}
         deleteTodo={deleteTodoHandler}
         toggleTodo={toggleTodoHandler}
       />
+
+      {todos.some((todo) => todo.isCompleted) && (
+        <p style={{ marginTop: '5%' }}>
+          You have completed {todos.filter((todo) => todo.isCompleted).length}{' '}
+          todos
+        </p>
+      )}
     </div>
   );
 }

@@ -5,7 +5,9 @@ import styles from './TodoList.module.css';
 function TodoList({ todos, deleteTodo, toggleTodo }) {
   return (
     <div className={styles.todo__todolist}>
-      {todos.length === 0 && <h2>Todo list is empty</h2>}
+      {todos.length === 0 && (
+        <h2 style={{ marginTop: '50px' }}>Todo list is empty</h2>
+      )}
       {todos.map((todo) => {
         return (
           <Todo
