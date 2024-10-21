@@ -10,12 +10,6 @@
     margin-bottom: 20px;
 }
 
-.todoForm__container button {
-    background: #7e64ff;
-    color: white;
-    padding: 5px 20px;
-}
-
 .todoInput {
     width: 100%;
     max-width: 300px;

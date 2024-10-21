@@ -52,7 +52,6 @@ function App() {
     <div className="App">
       <h1 style={{ marginTop: '10%' }}>Todo App</h1>
       <TodoForm addTodo={addTodoHandler} />
-
       {todos.length !== 0 && (
         <TodosActions
           completedTodosExist={completedTodoscCount > 0}
@@ -60,18 +59,17 @@ function App() {
           clearCompletedTodos={clearCompletedTodosHandler}
         />
       )}
-
       <TodoList
         todos={todos}
         deleteTodo={deleteTodoHandler}
         toggleTodo={toggleTodoHandler}
       />
-
-      {todos.some((todo) => todo.isCompleted) && (
-        <p style={{ marginTop: '5%' }}>
-          You have completed {todos.filter((todo) => todo.isCompleted).length}{' '}
-          todos
-        </p>
+      {completedTodoscCount > 0 && (
+        <p
+          style={{ marginTop: '5%' }}
+        >{`You have completed ${completedTodoscCount} ${
+          completedTodoscCount === 1 ? 'todo' : 'todos'
+        }`}</p>
       )}
     </div>
   );
