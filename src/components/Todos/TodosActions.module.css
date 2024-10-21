@@ -1,0 +1,8 @@
+.todosActions__container {
+    display: flex;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0px 15px;
+    gap: 20px;
+    justify-content: center;
+}

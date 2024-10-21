@@ -6,7 +6,9 @@ function TodoList({ todos, deleteTodo, toggleTodo }) {
   return (
     <div className={styles.todo__todolist}>
       {todos.length === 0 && (
-        <h2 style={{ marginTop: '50px' }}>Todo list is empty</h2>
+        <h2 style={{ opacity: '0.5', marginTop: '50px' }}>
+          Todo list is empty
+        </h2>
       )}
       {todos.map((todo) => {
         return (

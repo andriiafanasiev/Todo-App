@@ -46,6 +46,8 @@ function App() {
     setTodos(todos.filter((todo) => !todo.isCompleted));
   };
 
+  const completedTodoscCount = todos.filter((todo) => todo.isCompleted).length;
+
   return (
     <div className="App">
       <h1 style={{ marginTop: '10%' }}>Todo App</h1>
@@ -53,6 +55,7 @@ function App() {
 
       {todos.length !== 0 && (
         <TodosActions
+          completedTodosExist={completedTodoscCount > 0}
           resetTodos={resetTodosHandler}
           clearCompletedTodos={clearCompletedTodosHandler}
         />
