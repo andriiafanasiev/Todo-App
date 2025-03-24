@@ -9,7 +9,7 @@ interface TodoFormProps {
 function TodoForm({ addTodo }: TodoFormProps) {
     let [todoText, setTodoText] = useState('');
 
-    function onSubmitHandler(e) {
+    function onSubmitHandler(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         addTodo(todoText);
         setTodoText('');
