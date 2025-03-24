@@ -4,13 +4,8 @@ import capitalizeFirstLetter from './utils';
 import TodoList from './components/Todos/TodoList';
 import TodoForm from './components/Todos/TodoForm';
 import TodosActions from './components/Todos/TodosActions';
+import { Todo } from '../src/types';
 import './App.css';
-
-interface Todo {
-    text: string;
-    isCompleted: boolean;
-    id: string;
-}
 
 function App() {
     const [todos, setTodos] = useState<Todo[]>([]);

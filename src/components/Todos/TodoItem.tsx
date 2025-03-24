@@ -2,20 +2,15 @@ import { RiTodoFill } from 'react-icons/ri';
 import { MdOutlineDelete } from 'react-icons/md';
 import { FaCheck } from 'react-icons/fa';
 import styles from './Todo.module.css';
-
-interface TodoObj {
-    text: string;
-    isCompleted: boolean;
-    id: string;
-}
+import { Todo } from '../../types';
 
 interface TodoProps {
-    todo: TodoObj;
+    todo: Todo;
     deleteTodo: (id: string) => void;
     toggleTodo: (id: string) => void;
 }
 
-function Todo({ todo, deleteTodo, toggleTodo }: TodoProps) {
+function TodoItem({ todo, deleteTodo, toggleTodo }: TodoProps) {
     return (
         <div
             className={`${styles.todo} ${
@@ -38,4 +33,4 @@ function Todo({ todo, deleteTodo, toggleTodo }: TodoProps) {
     );
 }
 
-export default Todo;
+export default TodoItem;
