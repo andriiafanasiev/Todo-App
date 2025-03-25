@@ -1,8 +1,14 @@
-import React from 'react';
 import TodoItem from './TodoItem';
 import styles from './TodoList.module.css';
+import { Todo } from '../../types';
 
-function TodoList({ todos, deleteTodo, toggleTodo }) {
+interface TodoListProps {
+    todos: Todo[];
+    deleteTodo: (id: string) => void;
+    toggleTodo: (id: string) => void;
+}
+
+function TodoList({ todos, deleteTodo, toggleTodo }: TodoListProps) {
     return (
         <div className={styles.todo__todolist}>
             {todos.length === 0 && (
