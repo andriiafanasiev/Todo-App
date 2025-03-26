@@ -1,39 +1,55 @@
 # Todo React App
 
-A simple Todo application built with React.
+Todo-App is a simple task management application. It allows users to manage their tasks efficiently.
 
 ## Features
 
-- Add and delete tasks
+-   Add and delete tasks
 
 ## Screenshot
 
 ![Todo App Screenshot](./public/assets/screenshot.png)
 
-## How to Run
+## Features
 
-1. **Clone the repository**:
+-   Add new tasks
+-   Delete tasks
+-   Mark tasks as completed
+-   Delete only completed tasks
+-   Reset all tasks
+-   Display the total number of tasks at the bottom
 
-   ```bash
-   git clone https://github.com/your-username/todo-app.git
-   cd todo-app
-   ```
+## Installation and Setup
 
-2. **Install dependencies**:
+1. Clone the repository:
 
-   ```bash
-   npm install
-   ```
+    ```sh
+    git clone https://github.com/andriiafanasiev/Todo-App.git
+    ```
 
-3. **Start the app**:
+2. Navigate to the project directory:
 
-   ```bash
-   npm start
-   ```
+    ```sh
+    cd Todo-App
+    ```
 
-4. **Open in browser**:
-   Go to [http://localhost:3000](http://localhost:3000).
+3. Install dependencies (if applicable):
 
----
+    ```sh
+    npm install
+    ```
 
-Just make sure to adjust the image path (`./assets/images/todo-app-screenshot.png`) according to where you save the screenshot in your project!
+4. Start the project:
+    ```sh
+    npm start
+    ```
+
+## Technologies Used
+
+-   TypeScript
+-   React
+-   react-icons
+
+## Author
+
+[Aндрій Афанасьєв](https://github.com/andriiafanasiev)
