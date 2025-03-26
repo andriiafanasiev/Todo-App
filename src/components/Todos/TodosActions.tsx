@@ -6,7 +6,7 @@ import { GrPowerReset } from 'react-icons/gr';
 interface TodosActionsProps {
     resetTodos: () => void;
     clearCompletedTodos: () => void;
-    completedTodosExist: () => void;
+    completedTodosExist: boolean;
 }
 
 function TodosActions({
