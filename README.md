@@ -49,7 +49,3 @@ Todo-App is a simple task management application. It allows users to manage thei
 -   TypeScript
 -   React
 -   react-icons
-
-## Author
-
-[Aндрій Афанасьєв](https://github.com/andriiafanasiev)
