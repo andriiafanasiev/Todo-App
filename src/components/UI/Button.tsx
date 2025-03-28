@@ -5,6 +5,8 @@ interface ButtonProps {
     disabled?: boolean;
     onClick?: () => void;
     title?: string;
+    type?: 'button' | 'submit' | 'reset';
+    className?: string;
 }
 
 function Button({
@@ -12,11 +14,14 @@ function Button({
     disabled = false,
     onClick,
     title,
+    type = 'button',
+    className = '',
     ...rest
 }: ButtonProps) {
     return (
         <button
-            className={styles.button}
+            type={type}
+            className={`${styles.button} ${className}`}
             disabled={disabled}
             onClick={onClick}
             title={title}
